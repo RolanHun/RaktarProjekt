@@ -1,11 +1,16 @@
 package modell;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class Raktar {
     private ArrayList<Elelmiszer> tartalma;
 
     public Raktar() {
+        this.tartalma = new ArrayList<>();
     }
     
     public void felvesz(Elelmiszer elelmiszer){
@@ -25,6 +30,12 @@ public class Raktar {
             System.out.println(string);
             }
         System.out.println("");
+    }
+    
+    public void kiir() throws FileNotFoundException, IOException{
+        try (ObjectOutputStream objKi = new ObjectOutputStream(new FileOutputStream("raktar.bin"))) {
+            objKi.writeObject(this);
+        }    
     }
 
     @Override

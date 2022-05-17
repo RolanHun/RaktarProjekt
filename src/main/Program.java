@@ -1,21 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main;
 
-/**
- *
- * @author vizsgaszf
- */
-public class Program {
+import java.time.LocalDate;
+import modell.Konzerv;
+import modell.Raktar;
 
-    /**
-     * @param args the command line arguments
-     */
+class Program {
+
     public static void main(String[] args) {
-        // TODO code application logic here
+        Raktar r1 = new Raktar();
+        r1.felvesz(new Konzerv("leiras", "fájl", "5konz", "senki", LocalDate.now().plusYears(10)));
+        r1.felvesz(new Konzerv("leiras", "fájl", "2konz", "senki", LocalDate.now().plusYears(50)));
+        r1.felvesz(new Konzerv("leiras", "fájl", "1konz", "senki"));
+        
+        System.out.println(r1+"\n");
+        
+        r1.nevSzerint();
     }
     
 }

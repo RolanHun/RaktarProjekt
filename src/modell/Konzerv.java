@@ -12,6 +12,13 @@ public class Konzerv extends Elelmiszer{
         this.leiras = leiras;
         this.receptLeiras = receptLeiras;
     }
+
+    public Konzerv(String leiras, String receptLeiras, String nev, String gyarto) {
+        super(nev, gyarto);
+        this.leiras = leiras;
+        this.receptLeiras = receptLeiras;
+    }
+    
     
     public void receptetMutat(){
         if(Files.exists(Paths.get(receptLeiras))){
@@ -20,6 +27,11 @@ public class Konzerv extends Elelmiszer{
         else{
             System.out.println("Nem létezik");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "\n" + "Konzerv{" + "nev=" + this.getNev() + ", gyarto=" + this.getGyarto() + ", lejarat=" + this.getLejarat() + ", leiras=" + leiras + ", receptLeiras=" + receptLeiras  + '}';
     }
     
 }

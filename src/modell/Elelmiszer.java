@@ -28,6 +28,11 @@ public abstract class Elelmiszer {
     public LocalDate getLejarat() {
         return lejarat;
     }
+
+    @Override
+    public String toString() {
+        return "Elelmiszer{" + "nev=" + nev + ", gyarto=" + gyarto + ", lejarat=" + lejarat + '}';
+    }
     
     
 }
